@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tasya - Portfolio Keren</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --ungu: #8A2BE2;
+      --pink: #FF1493;
+      --biru: #00BFFF;
+      --hijau: #00FA9A;
+      --kuning: #FFD700;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #F8F9FA;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(45deg, var(--ungu), var(--pink), var(--biru));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, var(--ungu), var(--pink));
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(138, 43, 226, 0.3);
+    }
+    
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    .pulse-animation {
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--ungu), var(--pink));
+    }
+    
+    .skill-bar {
+      height: 10px;
+      border-radius: 5px;
+      background: linear-gradient(90deg, var(--ungu), var(--pink));
+    }
+  </style>
+</head>
+<body class="overflow-x-hidden">
+  <!-- Navbar Keren -->
+  <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-lg">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-3xl font-bold gradient-text">TASYA</h1>
+      <div class="hidden md:flex space-x-10">
+        <a href="#beranda" class="font-semibold hover:text-purple-600 transition-all hover:scale-105">Beranda</a>
+        <a href="#tentang" class="font-semibold hover:text-pink-600 transition-all hover:scale-105">Tentang</a>
+        <a href="#keahlian" class="font-semibold hover:text-blue-500 transition-all hover:scale-105">Keahlian</a>
+        <a href="#portofolio" class="font-semibold hover:text-green-500 transition-all hover:scale-105">Portofolio</a>
+        <a href="#pengalaman" class="font-semibold hover:text-yellow-500 transition-all hover:scale-105">Pengalaman</a>
+        <a href="#kontak" class="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-bold hover:shadow-lg transition-all hover:scale-105">Kontak</a>
+      </div>
+      <button id="menu-btn" class="md:hidden text-2xl">
+        <i class="fas fa-bars gradient-text"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section Spektakuler -->
+  <section id="beranda" class="pt-32 pb-20 px-6 gradient-bg text-white">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+      <div class="md:w-1/2 space-y-8">
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+          Halo, Saya <span class="gradient-text">Tasya</span>
+        </h1>
+        <h2 class="text-2xl md:text-3xl font-light bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-green-300">
+          Mahasiswa IT & Chef Profesional
+        </h2>
+        <p class="text-lg text-white/80">
+          Menggabungkan kecerdasan teknologi dengan kreativitas kuliner untuk menciptakan solusi inovatif
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#portofolio" class="px-8 py-3 bg-white text-purple-600 rounded-full font-bold hover:bg-transparent hover:text-white hover:border-2 hover:border-white transition-all transform hover:-translate-y-1 shadow-lg">
+            <i class="fas fa-eye mr-2"></i> Lihat Portofolio
+          </a>
+          <a href="#kontak" class="px-8 py-3 border-2 border-white text-white rounded-full font-bold hover:bg-white hover:text-purple-600 transition-all transform hover:-translate-y-1 shadow-lg">
+            <i class="fas fa-paper-plane mr-2"></i> Hubungi Saya
+          </a>
+        </div>
+        <div class="flex gap-4 mt-6">
+          <a href="#" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition">
+            <i class="fab fa-linkedin-in text-white"></i>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition">
+            <i class="fab fa-instagram text-white"></i>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition">
+            <i class="fab fa-github text-white"></i>
+          </a>
+        </div>
+      </div>
+      <div class="md:w-1/2 flex justify-center relative">
+        <div class="relative">
+          <img src="assets/images/tasya-profile.jpg" 
+               alt="Tasya" 
+               class="w-80 h-80 object-cover rounded-full border-4 border-white shadow-2xl float-animation">
+          <div class="absolute -bottom-5 -right-5 bg-white text-purple-600 p-4 rounded-xl shadow-xl pulse-animation">
+            <div class="flex items-center">
+              <i class="fas fa-trophy text-yellow-500 text-2xl mr-2"></i>
+              <div>
+                <p class="font-bold">Top Talent</p>
+                <p class="text-xs">2023 Award</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tentang Saya -->
+  <section id="tentang" class="py-20 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold gradient-text mb-4">Tentang Saya</h2>
+        <div class="h-1 w-24 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto rounded-full"></div>
+      </div>
+      
+      <div class="flex flex-col lg:flex-row gap-12 items-center">
+        <div class="lg:w-2/5 relative">
+          <img src="assets/images/tasya-about.jpg" 
+               alt="Tentang Tasya" 
+               class="w-full rounded-xl shadow-2xl">
+          <div class="absolute -top-5 -left-5 bg-gradient-to-r from-blue-500 to-green-400 text-white px-6 py-2 rounded-full shadow-lg">
+            <i class="fas fa-star mr-2"></i> Profesional
+          </div>
+        </div>
+        
+        <div class="lg:w-3/5">
+          <h3 class="text-3xl font-bold text-gray-800 mb-6">Perjalanan Unik Saya</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+            Sebagai mahasiswa <span class="font-semibold text-purple-600">Teknologi Informasi</span> di Universitas BSI dan <span class="font-semibold text-pink-600">Chef Profesional</span>, saya membawa kombinasi langka antara keahlian teknis dan kreativitas kuliner. Dua passion ini telah membentuk saya menjadi pribadi yang:
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="flex items-start">
+              <div class="bg-purple-100 p-3 rounded-full mr-4">
+                <i class="fas fa-lightbulb text-purple-600 text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800">Inovatif</h4>
+                <p class="text-gray-600">Selalu mencari solusi kreatif untuk setiap tantangan</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-pink-100 p-3 rounded-full mr-4">
+                <i class="fas fa-clock text-pink-600 text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800">Disiplin Waktu</h4>
+                <p class="text-gray-600">Ahli mengelola waktu antara kuliah dan kerja</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-blue-100 p-3 rounded-full mr-4">
+                <i class="fas fa-code text-blue-600 text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800">Ahli Teknologi</h4>
+                <p class="text-gray-600">Menguasai berbagai bahasa pemrograman</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-green-100 p-3 rounded-full mr-4">
+                <i class="fas fa-utensils text-green-600 text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800">Spesialis Kuliner</h4>
+                <p class="text-gray-600">Pengalaman luas di industri makanan</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-100">
+            <h4 class="font-bold text-gray-800 mb-3">Visi Saya:</h4>
+            <p class="text-gray-600">
+              "Menciptakan solusi teknologi inovatif untuk industri kuliner yang dapat memudahkan kehidupan banyak orang dan meningkatkan pengalaman makan."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Keahlian -->
+  <section id="keahlian" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold gradient-text mb-4">Keahlian Saya</h2>
+        <div class="h-1 w-24 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto rounded-full"></div>
+        <p class="text-gray-600 max-w-2xl mx-auto mt-4 text-lg">
+          Kombinasi unik keahlian teknologi dan kuliner yang membuat saya berbeda
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Teknologi -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+          <div class="flex items-center mb-6">
+            <div class="bg-purple-100 p-3 rounded-full mr-4">
+              <i class="fas fa-laptop-code text-purple-600 text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800">Keahlian Teknologi</h3>
+          </div>
+          
+          <div class="space-y-6">
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">Web Development</span>
+                <span class="font-bold text-purple-600">95%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-3">
+                <div class="skill-bar h-3 rounded-full" style="width: 95%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">Mobile Development</span>
+                <span class="font-bold text-purple-600">80%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-3">
+                <div class="skill-bar h-3 rounded-full" style="width: 80%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">UI/UX Design</span>
+                <span class="font-bold text-purple-600">85%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-3">
+                <div class="skill-bar h-3 rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Kuliner -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+          <div class="flex items-center mb-6">
+            <div class="bg-pink-100 p-3 rounded-full mr-4">
+              <i class="fas fa-utensils text-pink-600 text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800">Keahlian Kuliner</h3>
+          </div>
+          
+          <div class="space-y-6">
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">Pengembangan Menu</span>
+                <span class="font-bold text-pink-600">90%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-3">
+                <div class="bg-gradient-to-r from-pink-500 to-red-500 h-3 rounded-full" style="width: 90%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">Manajemen Dapur</span>
+                <span class="font-bold text-pink-600">88%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-3">
+                <div class="bg-gradient-to-r from-pink-500 to-red-500 h-3 rounded-full" style="width: 88%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">Kreasi Masakan</span>
+                <span class="font-bold text-pink-600">92%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-3">
+                <div class="bg-gradient-to-r from-pink-500 to-red-500 h-3 rounded-full" style="width: 92%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portofolio -->
+  <section id="portofolio" class="py-20 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold gradient-text mb-4">Portofolio Terbaik</h2>
+        <div class="h-1 w-24 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto rounded-full"></div>
+        <p class="text-gray-600 max-w-2xl mx-auto mt-4 text-lg">
+          Karya terbaik saya di bidang teknologi dan kuliner
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Proyek 1 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xl card-hover">
+          <div class="relative overflow-hidden h-56">
+            <img src="assets/images/website-bola.jpeg" 
+                 alt="Website Bola" 
+                 class="w-full h-full object-cover transition duration-500 hover:scale-110">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+              <h3 class="text-xl font-bold text-white">Website Info Bola</h3>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">HTML/CSS</span>
+              <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">JavaScript</span>
+              <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">API</span>
+            </div>
+            <p class="text-gray-600 mb-4">
+              Platform informasi klub bola dengan update langsung, statistik pertandingan, dan analisis mendalam.
+            </p>
+            <a href="#" class="text-purple-600 font-semibold hover:text-purple-800 transition flex items-center">
+              Lihat Detail <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Proyek 2 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xl card-hover">
+          <div class="relative overflow-hidden h-56">
+            <img src="assets/images/project-ecommerce.png" 
+                 alt="E-commerce" 
+                 class="w-full h-full object-cover transition duration-500 hover:scale-110">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+              <h3 class="text-xl font-bold text-white">Platform E-commerce</h3>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">React</span>
+              <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Node.js</span>
+              <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">MongoDB</span>
+            </div>
+            <p class="text-gray-600 mb-4">
+              Sistem e-commerce lengkap dengan keranjang belanja, pembayaran online, dan manajemen produk.
+            </p>
+            <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 transition flex items-center">
+              Lihat Detail <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Proyek 3 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xl card-hover">
+          <div class="relative overflow-hidden h-56">
+            <img src="assets/images/karya-kuliner.jpeg" 
+                 alt="Inovasi Kuliner" 
+                 class="w-full h-full object-cover transition duration-500 hover:scale-110">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+              <h3 class="text-xl font-bold text-white">Inovasi Menu Kuliner</h3>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-sm">Menu Design</span>
+              <span class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-sm">Food Science</span>
+              <span class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-sm">Cost Control</span>
+            </div>
+            <p class="text-gray-600 mb-4">
+              Pengembangan 15+ menu baru dengan peningkatan efisiensi biaya 40% dan peningkatan kepuasan pelanggan.
+            </p>
+            <a href="#" class="text-pink-600 font-semibold hover:text-pink-800 transition flex items-center">
+              Lihat Detail <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pengalaman -->
+  <section id="pengalaman" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold gradient-text mb-4">Pengalaman Kerja</h2>
+        <div class="h-1 w-24 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto rounded-full"></div>
+        <p class="text-gray-600 max-w-2xl mx-auto mt-4 text-lg">
+          Perjalanan karir saya yang beragam di bidang teknologi dan kuliner
+        </p>
+      </div>
+      
+      <div class="relative pl-8">
+        <!-- Timeline -->
+        <div class="space-y-12">
+          <!-- Pengalaman 1 -->
+          <div class="relative timeline-item pl-8">
+            <div class="absolute -left-2 top-0 w-5 h-5 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 border-4 border-white shadow-lg"></div>
+            <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+              <div class="flex justify-between flex-wrap">
+                <h3 class="text-xl font-semibold text-gray-800">PT. Creative Culinary</h3>
+                <span class="text-purple-600 font-medium">Des 2022 - Sekarang</span>
+              </div>
+              <p class="text-pink-600 font-semibold mb-2">Cook 3</p>
+              <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                <li>Mengembangkan 15+ menu baru meningkatkan kepuasan pelanggan 30%</li>
+                <li>Menerapkan efisiensi dapur mengurangi waste 25%</li>
+                <li>Melatih 8 staf baru dalam teknik kuliner profesional</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Pengalaman 2 -->
+          <div class="relative timeline-item pl-8">
+            <div class="absolute -left-2 top-0 w-5 h-5 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 border-4 border-white shadow-lg"></div>
+            <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+              <div class="flex justify-between flex-wrap">
+                <h3 class="text-xl font-semibold text-gray-800">Universitas BSI</h3>
+                <span class="text-purple-600 font-medium">2023 - 2026</span>
+              </div>
+              <p class="text-pink-600 font-semibold mb-2">Mahasiswa Teknologi Informasi</p>
+              <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                <li>IPK 3.8/4.0 sambil bekerja full-time</li>
+                <li>Ketua proyek pengembangan website universitas</li>
+                <li>Spesialisasi dalam pengembangan web dan mobile</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Pengalaman 3 -->
+          <div class="relative timeline-item pl-8">
+            <div class="absolute -left-2 top-0 w-5 h-5 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 border-4 border-white shadow-lg"></div>
+            <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+              <div class="flex justify-between flex-wrap">
+                <h3 class="text-xl font-semibold text-gray-800">PT. Mandom Indonesia</h3>
+                <span class="text-purple-600 font-medium">Mar 2022 - Jul 2022</span>
+              </div>
+              <p class="text-pink-600 font-semibold mb-2">Operator Produksi</p>
+              <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                <li>Mengoperasikan mesin produksi dengan uptime 99.8%</li>
+                <li>Kontrol kualitas mengurangi defect 15%</li>
+                <li>Bekerja dalam tim mencapai target produksi</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section id="kontak" class="py-20 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold gradient-text mb-4">Hubungi Saya</h2>
+        <div class="h-1 w-24 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto rounded-full"></div>
+        <p class="text-gray-600 max-w-2xl mx-auto mt-4 text-lg">
+          Tertarik bekerja sama? Silakan kirim pesan melalui form berikut
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div>
+          <form class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="nama" class="block text-gray-600 mb-2 font-medium">Nama Lengkap</label>
+                <input type="text" id="nama" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Nama Anda">
+              </div>
+              <div>
+                <label for="email" class="block text-gray-600 mb-2 font-medium">Email</label>
+                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="email@anda.com">
+              </div>
+            </div>
+            <div>
+              <label for="subjek" class="block text-gray-600 mb-2 font-medium">Subjek</label>
+              <input type="text" id="subjek" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Subjek pesan">
+            </div>
+            <div>
+              <label for="pesan" class="block text-gray-600 mb-2 font-medium">Pesan</label>
+              <textarea id="pesan" rows="6" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Tulis pesan Anda..."></textarea>
+            </div>
+            <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+              Kirim Pesan <i class="fas fa-paper-plane ml-2"></i>
+            </button>
+          </form>
+        </div>
+        
+        <div>
+          <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 h-full border border-purple-100 shadow-lg">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">Informasi Kontak</h3>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="bg-white p-3 rounded-full mr-4 shadow">
+                  <i class="fas fa-map-marker-alt text-purple-600 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800 mb-1">Lokasi</h4>
+                  <p class="text-gray-600">Bekasi, Jawa Barat, Indonesia</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="bg-white p-3 rounded-full mr-4 shadow">
+                  <i class="fas fa-envelope text-purple-600 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800 mb-1">Email</h4>
+                  <p class="text-gray-600">tasyazesica05@gmail.com</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="bg-white p-3 rounded-full mr-4 shadow">
+                  <i class="fas fa-phone text-purple-600 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800 mb-1">Telepon</h4>
+                  <p class="text-gray-600">+62 823 7794 6665</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-12">
+              <h4 class="font-bold text-gray-800 mb-4">Sosial Media</h4>
+              <div class="flex gap-4">
+                <a href="#" class="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-purple-600 hover:bg-purple-600 hover:text-white transition transform hover:-translate-y-1">
+                  <i class="fab fa-linkedin-in text-xl"></i>
+                </a>
+                <a href="#" class="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-pink-600 hover:bg-pink-600 hover:text-white transition transform hover:-translate-y-1">
+                  <i class="fab fa-instagram text-xl"></i>
+                </a>
+                <a href="#" class="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-800 hover:bg-gray-800 hover:text-white transition transform hover:-translate-y-1">
+                  <i class="fab fa-github text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-purple-800 to-pink-700 text-white py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0 text-center md:text-left">
+          <h3 class="text-3xl font-bold">TASYA S</h3>
+          <p class="text-purple-200 mt-2">Mahasiswa IT & Chef Profesional</p>
+        </div>
+        <div class="flex flex-col items-center md:items-end">
+          <div class="flex gap-6 mb-4">
+            <a href="#beranda" class="text-purple-200 hover:text-white transition">Beranda</a>
+            <a href="#tentang" class="text-purple-200 hover:text-white transition">Tentang</a>
+            <a href="#portofolio" class="text-purple-200 hover:text-white transition">Portofolio</a>
+            <a href="#kontak" class="text-purple-200 hover:text-white transition">Kontak</a>
+          </div>
+          <div class="flex gap-4">
+            <a href="#" class="text-purple-200 hover:text-white transition text-xl">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="text-purple-200 hover:text-white transition text-xl">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class
